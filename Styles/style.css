@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 .hero-bg {
-  background-image: url("../Images/Hero_Leaf_1.png"), url("../Images/Hero_Leaf_2.png");
+  background-image: url("../Images/Hero_Leaf_1.png"),
+    url("../Images/Hero_Leaf_2.png");
   background-size: 190px, 190px;
   background-position: bottom left -20px, bottom right -20px;
   background-repeat: no-repeat;

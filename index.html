@@ -103,7 +103,8 @@
                   </button>
                 </div>
                 <div
-                  class="px-3.5 py-2.5 rounded-sm mx-3 transition-all cursor-pointer active:bg-[#cff0dc] active:text-black sm:hidden"
+                  id="Cart_Button"
+                  class="px-3.5 py-2.5 rounded-sm mx-5 transition-all cursor-pointer active:bg-[#cff0dc] active:text-black sm:hidden"
                 >
                   <i class="fa-solid fa-cart-shopping relative">
                     <span
@@ -124,6 +125,13 @@
             <ul class="bg-[#cff0dc] min-h-full w-50 p-3 text-[#15803D]">
               <li class="mb-3 text-lg font-semibold">Categories</li>
               <ul class="space-y-1 text-[13px]">
+                <li>
+                  <a
+                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
+                    ><i class="fa-solid fa-arrow-right rotate-315"></i> All
+                    Trees</a
+                  >
+                </li>
                 <li>
                   <a
                     class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
@@ -213,6 +221,37 @@
           </div>
         </div>
       </nav>
+      <div class="drawer drawer-end">
+        <input id="Cart_Drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-side">
+          <label
+            for="Cart_Drawer"
+            aria-label="close sidebar"
+            class="drawer-overlay"
+          ></label>
+          <ul class="menu bg-white text-base-content min-h-full w-55 p-4">
+            <h3 class="text-lg font-semibold mb-3">Your Cart</h3>
+            <!-- <p class="text-center my-10 text-[15px]">
+              No items in your cart yet.
+            </p> -->
+            <div
+              class="bg-[#f0fdf4] mb-3 p-3 rounded-xl flex justify-between items-center"
+            >
+              <div>
+                <h5 class="font-medium">Mango Tree</h5>
+                <p class="text-[#8C8C8C]"><span>500</span> X <span>1</span></p>
+              </div>
+              <i class="fa-solid fa-xmark text-[#8C8C8C] cursor-pointer"></i>
+            </div>
+            <div
+              class="flex justify-between pt-1.5 border-t-1 border-[#8C8C8C]"
+            >
+              <p>Total :</p>
+              <p>৳500</p>
+            </div>
+          </ul>
+        </div>
+      </div>
       <section class="bg-[#cff0dc]">
         <div class="max-w-7xl mx-auto py-13 text-center hero-bg sm:py-25">
           <h1 class="text-[23px] font-bold sm:text-5xl">
@@ -230,7 +269,149 @@
         </div>
       </section>
     </header>
-    <main></main>
+    <main class="bg-[#f0fdf4]">
+      <section class="max-w-7xl mx-auto py-9 w-[97%] sm:py-20">
+        <h1
+          class="text-center font-semibold text-xl mb-5 sm:text-[27px] sm:mb-11"
+        >
+          Choose Your Trees
+        </h1>
+        <div class="sm:flex sm:gap-5 sm:items-start">
+          <div class="hidden sm:block flex-1">
+            <h3 class="mb-3 text-xl font-semibold">Categories</h3>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >All Trees</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Fruit Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Flowering Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Shade Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Medicinal Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Timber Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Evergreen Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Ornamental Plant</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Bamboo</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Climber</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Aquatic Plant</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
+                  >Fruit Tree</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="w-[95%] mx-auto grid grid-cols-1 gap-5 sm:w-[100%] sm:grid-cols-3 sm:flex-4"
+          >
+            <div class="card bg-white rounded-3xl shadow-sm">
+              <figure>
+                <img
+                  class="h-[230px] w-full object-cover"
+                  src="https://i.ibb.co.com/cSQdg7tf/mango-min.jpg"
+                  alt=""
+                />
+              </figure>
+              <div class="card-body">
+                <h3 class="text-lg font-bold cursor-pointer">Mango Tree</h3>
+                <p>A fast-growing tropical tree that produces delicio...</p>
+                <div class="my-1.5 flex justify-between items-center">
+                  <h5
+                    class="text-[#15803d] bg-[#dcfce7] px-3 py-1 text-[13px] rounded-2xl"
+                  >
+                    Fruit Tree
+                  </h5>
+                  <h5 class="font-semibold text-lg">৳500</h5>
+                </div>
+                <button
+                  class="btn py-5 rounded-3xl bg-[#15803d] text-white hover:bg-[#1F9A4C] active:bg-[#116533]"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="hidden sm:block flex-1 bg-white p-3.5 rounded-2xl">
+            <h3 class="text-lg font-semibold mb-3">Your Cart</h3>
+            <div>
+              <!-- <p class="text-center my-10 text-[15px]">
+                No items in your cart yet.
+              </p> -->
+              <div
+                class="bg-[#f0fdf4] mb-3 p-3 rounded-xl flex justify-between items-center"
+              >
+                <div>
+                  <h5 class="font-medium">Mango Tree</h5>
+                  <p class="text-[#8C8C8C]">
+                    <span>500</span> X <span>1</span>
+                  </p>
+                </div>
+                <i class="fa-solid fa-xmark text-[#8C8C8C] cursor-pointer"></i>
+              </div>
+              <div
+                class="flex justify-between pt-1.5 border-t-1 border-[#8C8C8C]"
+              >
+                <p>Total :</p>
+                <p>৳500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
     <script src="JS/script.js"></script>
   </body>
