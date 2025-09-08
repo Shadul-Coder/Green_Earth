@@ -124,92 +124,10 @@
             ></label>
             <ul class="bg-[#cff0dc] min-h-full w-50 p-3 text-[#15803D]">
               <li class="mb-3 text-lg font-semibold">Categories</li>
-              <ul class="space-y-1 text-[13px]">
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i> All
-                    Trees</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i> Fruit
-                    Tree</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i>
-                    Flowering Tree</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i> Shade
-                    Tree</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i>
-                    Medicinal Tree</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i> Timber
-                    Tree</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i>
-                    Evergreen Tree</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i>
-                    Ornamental Plant</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i>
-                    Bamboo</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i>
-                    Climber</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i> Aquatic
-                    Plant</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="block px-3 py-1.5 rounded-3xl transition-all cursor-pointer active:bg-[#15803d] active:text-white"
-                    ><i class="fa-solid fa-arrow-right rotate-315"></i> Fruit
-                    Tree</a
-                  >
-                </li>
-              </ul>
+              <ul
+                id="Categories_Container_Menu"
+                class="space-y-1 text-[13px]"
+              ></ul>
               <li>
                 <button
                   class="mt-5 btn rounded-3xl border-none text-[#15803D] bg-[#FACC15] w-full active:bg-[#FDE68A]"
@@ -241,7 +159,7 @@
                 <h5 class="font-medium">Mango Tree</h5>
                 <p class="text-[#8C8C8C]"><span>500</span> X <span>1</span></p>
               </div>
-              <i class="fa-solid fa-xmark text-[#8C8C8C] cursor-pointer"></i>
+              <i class="fa-solid fa-xmark text-red-500 cursor-pointer"></i>
             </div>
             <div
               class="flex justify-between pt-1.5 border-t-1 border-[#8C8C8C]"
@@ -279,112 +197,15 @@
         <div class="sm:flex sm:gap-5 sm:items-start">
           <div class="hidden sm:block flex-1">
             <h3 class="mb-3 text-xl font-semibold">Categories</h3>
-            <ul class="space-y-1">
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >All Trees</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Fruit Tree</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Flowering Tree</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Shade Tree</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Medicinal Tree</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Timber Tree</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Evergreen Tree</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Ornamental Plant</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Bamboo</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Climber</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Aquatic Plant</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-5 py-2 rounded-3xl transition-all cursor-pointer hover:bg-[#15803d] active:bg-[#15803d] hover:text-white"
-                  >Fruit Tree</a
-                >
-              </li>
-            </ul>
+            <ul id="Categories_Container" class="space-y-1"></ul>
           </div>
           <div
+            id="Card_Container"
             class="w-[95%] mx-auto grid grid-cols-1 gap-5 sm:w-[100%] sm:grid-cols-3 sm:flex-4"
+          ></div>
+          <div
+            class="hidden sm:block flex-1 bg-white min-h-[520px] p-3.5 rounded-2xl"
           >
-            <div class="card bg-white rounded-3xl shadow-sm">
-              <figure>
-                <img
-                  class="h-[230px] w-full object-cover"
-                  src="https://i.ibb.co.com/cSQdg7tf/mango-min.jpg"
-                  alt=""
-                />
-              </figure>
-              <div class="card-body">
-                <h3 class="text-lg font-bold cursor-pointer">Mango Tree</h3>
-                <p>A fast-growing tropical tree that produces delicio...</p>
-                <div class="my-1.5 flex justify-between items-center">
-                  <h5
-                    class="text-[#15803d] bg-[#dcfce7] px-3 py-1 text-[13px] rounded-2xl"
-                  >
-                    Fruit Tree
-                  </h5>
-                  <h5 class="font-semibold text-lg">৳500</h5>
-                </div>
-                <button
-                  class="btn py-5 rounded-3xl bg-[#15803d] text-white hover:bg-[#1F9A4C] active:bg-[#116533]"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="hidden sm:block flex-1 bg-white p-3.5 rounded-2xl">
             <h3 class="text-lg font-semibold mb-3">Your Cart</h3>
             <div>
               <!-- <p class="text-center my-10 text-[15px]">
@@ -399,7 +220,7 @@
                     <span>500</span> X <span>1</span>
                   </p>
                 </div>
-                <i class="fa-solid fa-xmark text-[#8C8C8C] cursor-pointer"></i>
+                <i class="fa-solid fa-xmark text-red-500 cursor-pointer"></i>
               </div>
               <div
                 class="flex justify-between pt-1.5 border-t-1 border-[#8C8C8C]"
@@ -411,6 +232,18 @@
           </div>
         </div>
       </section>
+      <dialog id="Tree_Info_Modal" class="modal">
+        <div class="modal-box rounded-2xl">
+          <form method="dialog">
+            <button
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <div id="Modal_Content" class="space-y-3 sm:space-y-5"></div>
+        </div>
+      </dialog>
       <section class="max-w-4xl mx-auto pb-9 w-[97%] sm:pb-20">
         <h1
           class="text-center font-semibold text-xl mb-7 sm:text-[27px] sm:mb-11"
