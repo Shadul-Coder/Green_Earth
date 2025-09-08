@@ -1,3 +1,5 @@
+const cartItems = [];
+
 document.querySelector(`#Cart_Button`).addEventListener(`click`, () => {
   document.querySelector(`#Cart_Drawer`).click();
 });
@@ -83,9 +85,7 @@ const displayPlants = (data) => {
           <h3
             onclick="displayModal(${element.id})"
             class="text-lg font-bold cursor-pointer"
-          >
-            ${element.name}
-          </h3>
+          >${element.name}</h3>
           <p>${element.description.slice(0, 50)}...</p>
           <div class="my-1.5 flex justify-between items-center">
             <h5
@@ -93,10 +93,12 @@ const displayPlants = (data) => {
             >
               ${element.category}
             </h5>
-            <h5 class="font-semibold text-lg">৳${element.price}</h5>
+            <h3 class="font-semibold text-lg">৳<span>${
+              element.price
+            }</span></h3>
           </div>
           <button
-            class="btn py-5 rounded-3xl bg-[#15803d] text-white hover:bg-[#1F9A4C] active:bg-[#116533]"
+            class="add-to-cart-btn btn py-5 rounded-3xl bg-[#15803d] text-white hover:bg-[#1F9A4C] active:bg-[#116533]"
           >
             Add to Cart
           </button>
@@ -109,7 +111,6 @@ const displayPlants = (data) => {
 const displayModal = async (id) => {
   let res = await fetch(`https://openapi.programming-hero.com/api/plant/${id}`);
   let data = await res.json();
-  console.log(data.plants);
   let modalContainer = document.querySelector(`#Modal_Content`);
   modalContainer.innerHTML = `
     <h1 class="text-xl font-bold">${data.plants.name}</h1>
@@ -162,3 +163,86 @@ document
       event.target.classList.add(`bg-[#15803d]`, `text-white`);
     }
   });
+
+document.querySelector(`#Card_Container`).addEventListener(`click`, (event) => {
+  if (event.target.classList.contains(`add-to-cart-btn`)) {
+    let name = event.target.parentElement.querySelector(`h3`).textContent;
+    let price = event.target.parentElement
+      .querySelector(`div`)
+      .querySelector(`h3`)
+      .querySelector(`span`).textContent;
+    let quantity = 1;
+    let item = { name, price, quantity };
+    let index = cartItems.findIndex((item) => item.name === name);
+    if (index !== -1) {
+      cartItems[index].quantity++;
+    } else {
+      cartItems.push(item);
+    }
+    displayCartItem(`#Cart_Container`);
+    displayCartItem(`#Cart_Container_Menu`);
+  }
+});
+
+const displayCartItem = (parent) => {
+  let container = document.querySelector(parent);
+  container.innerHTML = ``;
+  if (cartItems.length === 0) {
+    container.innerHTML = `
+      <p class="text-center my-10 text-[15px]">
+        No items in your cart yet.
+      </p>
+    `;
+    return;
+  }
+  let totalprice = 0;
+  cartItems.forEach((element) => {
+    container.innerHTML += `
+      <div
+        class="bg-[#f0fdf4] mb-3 p-3 rounded-xl flex justify-between items-center"
+      >
+        <div>
+          <h5 class="font-medium">${element.name}</h5>
+          <p class="text-[#8C8C8C]">
+            <span>${element.price}</span> X <span>${element.quantity}</span>
+          </p>
+        </div>
+        <i class="delete-cart fa-solid fa-xmark text-red-500 cursor-pointer"></i>
+      </div>
+    `;
+    totalprice += element.price * element.quantity;
+  });
+  container.innerHTML += `
+    <div
+      class="flex justify-between pt-1.5 border-t-1 border-[#8C8C8C]"
+    >
+      <p>Total :</p>
+      <p>৳${totalprice}</p>
+    </div>
+  `;
+  document.querySelector(`#Item_Count`).textContent = cartItems.length;
+};
+
+document
+  .querySelector(`#Cart_Container_Menu`)
+  .addEventListener(`click`, (event) => {
+    if (event.target.classList.contains(`delete-cart`)) {
+      const name = event.target.parentElement
+        .querySelector(`div`)
+        .querySelector(`h5`).textContent;
+      const index = cartItems.findIndex((item) => item.name === name);
+      cartItems.splice(index, 1);
+      displayCartItem(`#Cart_Container_Menu`);
+    }
+  });
+
+document.querySelector(`#Cart_Container`).addEventListener(`click`, (event) => {
+  if (event.target.classList.contains(`delete-cart`)) {
+    const name = event.target.parentElement
+      .querySelector(`div`)
+      .querySelector(`h5`).textContent;
+    const index = cartItems.findIndex((item) => item.name === name);
+    cartItems.splice(index, 1);
+    displayCartItem(`#Cart_Container`);
+  }
+});
