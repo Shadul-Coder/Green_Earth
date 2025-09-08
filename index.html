@@ -75,19 +75,19 @@
                 </div>
                 <div class="hidden sm:block">
                   <ul class="flex gap-9">
-                    <li>
+                    <li onclick="scrollToAbout()">
                       <a
                         class="transition-all cursor-pointer px-3 py-2 rounded-3xl hover:bg-[#cff0dc] hover:text-[#15803D]"
                         >About</a
                       >
                     </li>
-                    <li>
+                    <li onclick="scrollToGallery()">
                       <a
                         class="transition-all cursor-pointer px-3 py-2 rounded-3xl hover:bg-[#cff0dc] hover:text-[#15803D]"
                         >Gallery</a
                       >
                     </li>
-                    <li>
+                    <li onclick="scrollToImpact()">
                       <a
                         class="transition-all cursor-pointer px-3 py-2 rounded-3xl hover:bg-[#cff0dc] hover:text-[#15803D]"
                         >Impact</a
@@ -97,6 +97,7 @@
                 </div>
                 <div class="hidden sm:block">
                   <button
+                    onclick="scrollToPlantTree()"
                     class="btn rounded-3xl border-none text-[#15803D] bg-[#FACC15] active:bg-[#FDE68A]"
                   >
                     Plant a Tree
@@ -131,6 +132,7 @@
               ></ul>
               <li>
                 <button
+                  onclick="scrollToPlantTree()"
                   class="mt-5 btn rounded-3xl border-none text-[#15803D] bg-[#FACC15] w-full active:bg-[#FDE68A]"
                 >
                   Plant a Tree
@@ -168,6 +170,7 @@
             for future generations.
           </p>
           <button
+            onclick="scrollToGallery()"
             class="mt-3 btn rounded-3xl border-none text-[#15803D] bg-[#FACC15] active:bg-[#FDE68A]"
           >
             Get Involved
@@ -176,7 +179,7 @@
       </section>
     </header>
     <main class="bg-[#f0fdf4]">
-      <section class="max-w-7xl mx-auto py-9 w-[97%] sm:py-20">
+      <section id="Gallery" class="max-w-7xl mx-auto py-9 w-[97%] sm:py-20">
         <h1
           class="text-center font-semibold text-xl mb-7 sm:text-[27px] sm:mb-11"
         >
@@ -215,7 +218,10 @@
           <div id="Modal_Content" class="space-y-3 sm:space-y-5"></div>
         </div>
       </dialog>
-      <section class="max-w-4xl mx-auto pb-9 w-[97%] sm:pb-20">
+      <section
+        id="About"
+        class="scroll-mt-11 max-w-4xl mx-auto pb-9 w-[97%] sm:pb-20"
+      >
         <h1
           class="text-center font-semibold text-xl mb-7 sm:text-[27px] sm:mb-11"
         >
@@ -242,7 +248,7 @@
           </div>
         </div>
       </section>
-      <section class="bg-[#cff0dc] pb-9 sm:pb-20">
+      <section id="Impact" class="bg-[#cff0dc] pb-9 sm:pb-20">
         <div class="max-w-7xl mx-auto w-[90%]">
           <h1
             class="text-center font-semibold text-xl pt-9 mb-7 sm:text-[27px] sm:pt-20 sm:mb-11"
@@ -279,7 +285,7 @@
       </section>
     </main>
     <footer>
-      <section class="bg-[#166534] pb-9 sm:pb-20">
+      <section id="PlantTree" class="bg-[#166534] pb-9 sm:pb-20">
         <h1
           class="text-center text-white font-semibold text-xl pt-9 mb-7 sm:text-[27px] sm:pt-20 sm:mb-11"
         >

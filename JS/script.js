@@ -1,5 +1,21 @@
 const cartItems = [];
 
+const scrollToAbout = () => {
+  document.querySelector(`#About`).scrollIntoView({ behavior: "smooth" });
+};
+
+const scrollToGallery = () => {
+  document.querySelector(`#Gallery`).scrollIntoView({ behavior: "smooth" });
+};
+
+const scrollToImpact = () => {
+  document.querySelector(`#Impact`).scrollIntoView({ behavior: "smooth" });
+};
+
+const scrollToPlantTree = () => {
+  document.querySelector(`#PlantTree`).scrollIntoView({ behavior: "smooth" });
+};
+
 document.querySelector(`#Cart_Button`).addEventListener(`click`, () => {
   document.querySelector(`#Cart_Drawer`).click();
 });
@@ -55,12 +71,28 @@ const displayCategories = (data) => {
 loadCategories();
 
 const loadAllPlants = async () => {
+  let container = document.querySelector(`#Card_Container`);
+  container.innerHTML = `
+    <div
+      class="h-[300px] sm:h-[500px] flex justify-center items-center col-span-3"
+    >
+      <span class="loading loading-dots loading-xl"></span>
+    </div>
+  `;
   let res = await fetch(`https://openapi.programming-hero.com/api/plants`);
   let data = await res.json();
   displayPlants(data.plants);
 };
 
 const loadPlants = async (id) => {
+  let container = document.querySelector(`#Card_Container`);
+  container.innerHTML = `
+    <div
+      class="h-[300px] sm:h-[500px] flex justify-center items-center col-span-3"
+    >
+      <span class="loading loading-dots loading-xl"></span>
+    </div>
+  `;
   let res = await fetch(
     `https://openapi.programming-hero.com/api/category/${id}`
   );
@@ -193,6 +225,7 @@ const displayCartItem = (parent) => {
         No items in your cart yet.
       </p>
     `;
+    document.querySelector(`#Item_Count`).textContent = 0;
     return;
   }
   let totalprice = 0;
@@ -233,6 +266,7 @@ document
       const index = cartItems.findIndex((item) => item.name === name);
       cartItems.splice(index, 1);
       displayCartItem(`#Cart_Container_Menu`);
+      displayCartItem(`#Cart_Container`);
     }
   });
 
@@ -243,6 +277,7 @@ document.querySelector(`#Cart_Container`).addEventListener(`click`, (event) => {
       .querySelector(`h5`).textContent;
     const index = cartItems.findIndex((item) => item.name === name);
     cartItems.splice(index, 1);
+    displayCartItem(`#Cart_Container_Menu`);
     displayCartItem(`#Cart_Container`);
   }
 });
